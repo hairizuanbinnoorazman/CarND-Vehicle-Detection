@@ -783,5 +783,12 @@ HTML("""
   <source src="vehicle_detection_output.mp4">
 </video>
 
+# Problems/Issues for current implementation
+
+The following algorithm implemented above may roughly work in some cases but it could possibly fail in the following scenarios.
+
+- Various weather conditions. This makes it hard to make out the shape of other vehicles as the rainy whether would add noise to the image. 
+- Various different makes of cars. If car's shapes change over the course of the year and if that wasn't really part of the image bank that was used to train the model, that would mean that the model wasn't train on that and it would probably ignore that shape as being defined as a car
+- Current implementation above is quite slow which makes it impossible to be used immediately. It would create plenty of code tweaking to optimize the speed to make it generate the video at get information of the possible location of the cars so that the algorithm can work near real time.
 
 
